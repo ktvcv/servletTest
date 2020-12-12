@@ -14,8 +14,7 @@
         http://www.springframework.org/schema/data/jpa
         http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa https://www.springframework.org/schema/data/jpa/spring-jpa.xsd
-http://www.springframework.org/schema/data/jpa ">
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa https://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <!--<context:annotation-config/>-->
 
@@ -47,9 +46,7 @@ http://www.springframework.org/schema/data/jpa ">
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</prop>
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.transaction.jta.platform">
-                    org.hibernate.service.jta.platform.internal.WeblogicJtaPlatform
-                </prop>
+                <prop key="hibernate.transaction.jta.platform">org.hibernate.service.jta.platform.internal.WeblogicJtaPlatform</prop>
 
             </props>
         </property>
@@ -59,7 +56,7 @@ http://www.springframework.org/schema/data/jpa ">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <jpa:repositories base-package="demo.repo" entity-manager-factory-ref="emf"/>
+    <jpa:repositories base-package="demo.repo" entity-manager-factory-ref="emf" />
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <context:component-scan base-package="demo">
 
